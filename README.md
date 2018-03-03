@@ -1,13 +1,6 @@
-# gatsby-starter-default
-The default Gatsby starter
+#Gatsby.js + WordPress
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+This is a repository for the [Watch and Learn](http://watch-learn.com/) tutorial series about making websites using [Gatsby.js](https://www.gatsbyjs.org/) and WordPress.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+## Episodes
+Every episode will have it's own branch. If you want to get the code for the specific episode use the branch menu and select the episode you want.
