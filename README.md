@@ -1,4 +1,4 @@
-#Gatsby.js + WordPress
+# Gatsby.js + WordPress
 
 This is a repository for the [Watch and Learn](http://watch-learn.com/) tutorial series about making websites using [Gatsby.js](https://www.gatsbyjs.org/) and WordPress.
 
