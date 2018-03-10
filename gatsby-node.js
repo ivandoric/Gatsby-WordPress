@@ -70,6 +70,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                             reject(result.errors);
                         }
                         const postTemplate = path.resolve("./src/templates/post.js");
+                        const postsTemplate = path.resolve("./src/templates/posts.js");
+
+                        // Create Posts
+                        createPage({
+                            path: `/posts/`,
+                            component: slash(postsTemplate)
+                        });
 
                         _.each(result.data.allWordpressPost.edges, edge => {
                             createPage({
