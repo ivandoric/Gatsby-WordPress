@@ -5,7 +5,9 @@ import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import './index.css'
 
-const TemplateWrapper = ({ children }) => (
+import MainMenu from '../components/Menu/MainMenu'
+
+const TemplateWrapper = ({ children,  data }) => (
   <div>
     <Helmet
       title="Gatsby Default Starter"
@@ -23,6 +25,7 @@ const TemplateWrapper = ({ children }) => (
         paddingTop: 0,
       }}
     >
+        <MainMenu menu={data} />
       {children()}
     </div>
   </div>
@@ -33,3 +36,21 @@ TemplateWrapper.propTypes = {
 }
 
 export default TemplateWrapper
+
+export const query = graphql`
+  query LayoutQuery {
+        allWordpressWpApiMenusMenusItems{
+            edges{
+                node{
+                    id
+                    name
+                    items{
+                        title
+                        url
+                        object_slug
+                    }
+                }
+            }
+        }
+  }
+`
