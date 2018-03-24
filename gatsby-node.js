@@ -3,6 +3,7 @@ const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
 const queryAll = require(`./src/queries/queryAll.js`)
+const createPaginatedPages = require("gatsby-paginate")
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
     const { createPage } = boundActionCreators;
@@ -31,6 +32,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
                 // Posts detail
                 const posts = result.data.allWordpressPost.edges
+
+                createPaginatedPages({
+                    edges: posts,
+                    createPage: createPage,
+                    pageTemplate: "src/templates/posts.js",
+                    pageLength: 3,
+                    pathPrefix: "posts"
+                })
 
                 posts.forEach(edge => {
                     createPage({
