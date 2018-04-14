@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 class PostTemplate extends Component {
     render() {
         const post = this.props.data.wordpressPost
-        const resolutions = post.featured_media.localFile.childImageSharp.resolutions
+        const resolutions = (post.featured_media) ? post.featured_media.localFile.childImageSharp.resolutions : null
 
 
         console.log(resolutions)
