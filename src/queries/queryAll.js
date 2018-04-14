@@ -23,6 +23,17 @@ module.exports = `
                     format
                     title
                     date
+                    featured_media{
+                        localFile{
+                            childImageSharp{
+                                resolutions(width:500, height: 200){
+                                    src
+                                    width
+                                    height
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

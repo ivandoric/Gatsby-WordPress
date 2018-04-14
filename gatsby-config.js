@@ -14,6 +14,8 @@ module.exports = {
                 useACF: true,
                 verboseOutput: true
             }
-        }
+        },
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-sharp'
     ],
 };

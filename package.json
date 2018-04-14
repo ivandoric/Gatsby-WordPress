@@ -9,7 +9,9 @@
     "gatsby-link": "^1.6.37",
     "gatsby-paginate": "^1.0.13",
     "gatsby-plugin-react-helmet": "^2.0.5",
+    "gatsby-plugin-sharp": "^1.6.42",
     "gatsby-source-wordpress": "^2.0.62",
+    "gatsby-transformer-sharp": "^1.6.22",
     "react-helmet": "^5.2.0"
   },
   "keywords": [

@@ -5,8 +5,10 @@ import Img from "gatsby-image"
 class PostTemplate extends Component {
     render() {
         const post = this.props.data.wordpressPost
+        const resolutions = post.featured_media.localFile.childImageSharp.resolutions
 
-        console.log(post)
+
+        console.log(resolutions)
 
         let facebook = ''
         let twitter = ''
@@ -26,6 +28,14 @@ class PostTemplate extends Component {
         return (
             <div>
                 <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+
+                {resolutions &&
+                    <div>
+                        <Img resolutions={resolutions}/>
+                        < img src={resolutions.src} alt=""/>
+                    </div>
+                }
+
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
                 <div dangerouslySetInnerHTML={{__html: facebook}}></div>
@@ -56,6 +66,17 @@ export const pageQuery = graphql`
             acf {
                 facebook
                 twitter
+            }
+            featured_media{
+                localFile{
+                    childImageSharp{
+                        resolutions(width:500, height: 200){
+                            src
+                            width
+                            height
+                        }
+                    }
+                }
             }
         }
         site {
